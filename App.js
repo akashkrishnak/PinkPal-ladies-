@@ -1,26 +1,26 @@
-import React from 'react';
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-import DefaultScreen from './src/screens/DefaultScreen';
-import AlertScreen from './src/screens/AlertScreen';
-import LocationScreen from './src/screens/LocationScreen';
+import React from "react";
+import { createAppContainer, createSwitchNavigator } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
+import DefaultScreen from "./src/screens/DefaultScreen";
+import SearchScreen from "./src/screens/SearchScreen";
+import LocateScreen from "./src/screens/LocateScreen";
 
-const navigator = createStackNavigator({
-  Default: DefaultScreen,
-  Alert: AlertScreen,
-  Location: LocationScreen,
-}, {
-  initialRouteName: 'Default',
-  defaultNavigationOptions: {
-    title: 'Volunteers'
+const navigator = createStackNavigator(
+  {
+    Default: DefaultScreen,
+    Search: SearchScreen,
+    Locate: LocateScreen,
+  },
+  {
+    initialRouteName: "Default",
+    defaultNavigationOptions: {
+      title: "Women's App",
+    },
   }
-});
+);
 
 const App = createAppContainer(navigator);
 
 export default () => {
-  return (
-    <App />
-  );
+  return <App />;
 };
